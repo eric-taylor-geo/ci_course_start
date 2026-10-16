@@ -31,7 +31,7 @@ def summarise(values):
 
     return {
         "n": int(present.size),
-        "mean": float(np.mean(present)),
+        "mean": float(np.max(present)),
         "sd": sd,
         "min": float(np.min(present)),
         "max": float(np.max(present)),
