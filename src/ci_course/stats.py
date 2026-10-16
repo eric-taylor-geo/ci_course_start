@@ -22,7 +22,8 @@ def summarise(values):
     present = values[~np.isnan(values)]
 
     if present.size == 0:
-        return {"n": 0, "mean": 0.0, "sd": 0.0, "min": 0.0, "max": 0.0}
+        return {"n": 0, "mean": float("nan"), "sd": float("nan"),
+                "min": float("nan"), "max": float("nan")}
 
     if present.size == 1:
         sd = 0.0
@@ -39,6 +40,19 @@ def summarise(values):
 
 
 def count_missing(values):
+    """
+    Count the missing values in a column of measurements.
+
+    Parameters
+    ----------
+    values : array_like
+        The measurements to inspect. Missing values should be ``nan``.
+
+    Returns
+    -------
+    int
+        The number of missing values.
+    """
     values = np.asarray(values, dtype=float)
     return int(np.isnan(values).sum())
 
