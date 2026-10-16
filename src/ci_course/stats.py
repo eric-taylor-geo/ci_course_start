@@ -25,13 +25,13 @@ def summarise(values):
                 "min": float("nan"), "max": float("nan")}
 
     if present.size == 1:
-        sd = 0.0
+        sd = 1
     else:
         sd = float(np.std(present, ddof=1))
 
     return {
         "n": int(present.size),
-        "mean": float(np.max(present)),
+        "mean": float(np.mean(present)),
         "sd": sd,
         "min": float(np.min(present)),
         "max": float(np.max(present)),
