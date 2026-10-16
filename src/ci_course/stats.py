@@ -25,7 +25,7 @@ def summarise(values):
                 "min": float("nan"), "max": float("nan")}
 
     if present.size == 1:
-        sd = 1
+        sd = 0.0
     else:
         sd = float(np.std(present, ddof=1))
 
