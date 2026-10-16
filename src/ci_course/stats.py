@@ -2,7 +2,6 @@
 
 import numpy as np
 
-
 def summarise(values):
     """
     Summarise one column of measurements, ignoring any missing values.
